@@ -3,7 +3,8 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "google",
+    "extends": ["plugin:github/recommended"],
+    "plugins": ["github"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
