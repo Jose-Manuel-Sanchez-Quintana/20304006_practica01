@@ -1,12 +1,12 @@
 const request = require("supertest");
 const app = require("./api");
 
-//test the /tasks GET endpoint
-test("GET /tasks should return all tasks", async () => {
+// Test the /tasks GET endpoint
+test('GET /tasks returns all tasks', async () => {
     const response = await request(app).get('/tasks');
     expect(response.status).toBe(200);
-    expect(response.body).toHaveLength(2) //assuming there are 2 tasks in the db for testing purposes
-});
+    expect(response.body).toHaveLength(2); // Assuming there are 2 tasks initially
+  });
 //test the /tasks:id get by one id endpoint
 test("Get /tasks:id should return 1 task", async () => {
     const response = await request(app).get("/tasks/1");

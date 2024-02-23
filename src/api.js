@@ -19,7 +19,8 @@ app.get('/issues', (req, res) => {
 
 // Get all tasks
 app.get('/tasks', (req, res) => {
-    const tasks = tasksRepository.getAll();
+    //const tasks = tasksRepository.getAll();
+    const tasks = [];
     res.json(tasks);
 });
 
