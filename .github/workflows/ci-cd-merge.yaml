@@ -2,9 +2,9 @@ name: API CI AND CD
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, devlop_test_push]
   pull_request:
-    branches: [main, develop]
+    branches: [main, develop, devlop_test_push]
 
 jobs:
   testing:
@@ -51,6 +51,13 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.3.0
 
+      - name: App service auth
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'josesanchez-api-test'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: '${{ secrets.DOCKERHUB_USERNAME }}/taskapi:latest'
+          
       - name: CI/CD success OK
         if: success()
         uses: rtCamp/action-slack-notify@v2
