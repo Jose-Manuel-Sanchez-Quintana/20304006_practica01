@@ -62,6 +62,7 @@ jobs:
       - name: Notify success on Slack
         uses: rtCamp/action-slack-notify@v2
         with:
-          text: 'Node CI/CD successful'
+          text: Node CI/CD successful
+          color: good
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
