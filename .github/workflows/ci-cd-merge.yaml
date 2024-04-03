@@ -61,8 +61,12 @@ jobs:
     steps:
       - name: Notify success on Slack
         uses: rtCamp/action-slack-notify@v2
-        with:
-          text: Node CI/CD successful
-          color: good
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
