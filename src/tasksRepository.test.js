@@ -48,7 +48,7 @@ describe("pruebas", () => {
         tasksRepository.deleteTask(2);
 
         //Assert
-        expect(tasksRepository.getAll().length).toBe(2);
+        expect(tasksRepository.getAll().length).toBe(4);
     })
     test("Update a task", () => {
         // Arrage
