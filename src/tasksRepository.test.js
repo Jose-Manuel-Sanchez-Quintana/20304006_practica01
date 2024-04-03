@@ -12,8 +12,8 @@ describe("pruebas", () => {
         tasks = tasksRepository.getAll();
 
         //assert
-        expect(tasks.length).toBe(2);
-        expect(tasks.length == 2).toBe(true)
+        expect(tasks.length).toBe(4);
+        expect(tasks.length == 4).toBe(true)
     })
     test("Get one by id", () => {
 
@@ -33,13 +33,13 @@ describe("pruebas", () => {
 
         //Act
         tasksRepository.createTask({
-            id: 3,
+            id: 5,
             description: "description",
             title: "title",
         });
 
         //Assert
-        expect(tasksRepository.getAll().length).toBe(3);
+        expect(tasksRepository.getAll().length).toBe(5);
     })
     test("Delete task", () => {
         //Arrange
@@ -48,7 +48,7 @@ describe("pruebas", () => {
         tasksRepository.deleteTask(2);
 
         //Assert
-        expect(tasksRepository.getAll().length).toBe(2);
+        expect(tasksRepository.getAll().length).toBe(4);
     })
     test("Update a task", () => {
         // Arrage

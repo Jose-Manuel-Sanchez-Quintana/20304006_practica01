@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 let tasks = [
     { id: 1, title: 'Task 1', description: 'Do something' },
     { id: 2, title: 'Task 2', description: 'Do something else' },
-    { id: 3, title: 'Task 3', description: 'New task' },
+    { id: 3, title: 'Task 3', description: 'New task 3' },
+    { id: 4, title: 'Task 4', description: 'New task 4' },
 ];
 
 // Get all issues
